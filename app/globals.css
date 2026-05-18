@@ -5,6 +5,7 @@
 :root {
   color-scheme: light;
   scroll-behavior: smooth;
+  --font-poppins: Poppins, Montserrat, Arial, sans-serif;
 }
 
 * {
@@ -13,12 +14,51 @@
 
 html {
   background: #f8fafc;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   color: #102131;
   background: #f8fafc;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg,
+video,
+canvas,
+iframe {
+  max-width: 100%;
+}
+
+iframe {
+  display: block;
+  border: 0;
+}
+
+a,
+button,
+input,
+textarea {
+  min-width: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+a,
+button,
+input,
+textarea {
+  overflow-wrap: anywhere;
 }
 
 ::selection {
@@ -27,24 +67,30 @@ body {
 }
 
 .section-padding {
-  padding: 4.5rem 0;
+  padding: 3.5rem 0;
 }
 
 @media (min-width: 768px) {
+  .section-padding {
+    padding: 5.5rem 0;
+  }
+}
+
+@media (min-width: 1280px) {
   .section-padding {
     padding: 6.5rem 0;
   }
 }
 
 .container-x {
-  width: min(100% - 2rem, 80rem);
+  width: min(100% - 1.25rem, 80rem);
   margin-inline: auto;
 }
 
 .hero-overlay {
   background:
-    linear-gradient(90deg, rgba(4, 31, 49, 0.94) 0%, rgba(9, 60, 93, 0.78) 45%, rgba(9, 60, 93, 0.08) 100%),
-    linear-gradient(0deg, rgba(4, 31, 49, 0.42), rgba(4, 31, 49, 0.02));
+    radial-gradient(circle at 78% 24%, rgba(20, 184, 166, 0.22), transparent 30%),
+    linear-gradient(135deg, rgba(4, 31, 49, 0.98) 0%, rgba(9, 60, 93, 0.96) 58%, rgba(6, 31, 50, 0.98) 100%);
 }
 
 .focus-ring {
@@ -74,7 +120,7 @@ details summary::-webkit-details-marker {
   position: fixed;
   width: 60px;
   height: 60px;
-  bottom: 20px;
+  bottom: 82px;
   right: 20px;
   background: #25d366;
   color: white;
@@ -91,4 +137,26 @@ details summary::-webkit-details-marker {
 .whatsapp-float:hover {
   transform: translateY(-4px) scale(1.05);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.28);
+}
+
+@media (min-width: 640px) {
+  .container-x {
+    width: min(100% - 2rem, 80rem);
+  }
+}
+
+@media (min-width: 768px) {
+  .whatsapp-float {
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .container-x {
+    width: min(100% - 1rem, 80rem);
+  }
+
+  .section-padding {
+    padding: 3rem 0;
+  }
 }
